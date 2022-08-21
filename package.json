@@ -2,7 +2,10 @@
   "name": "Elastic-Beanstalk-Sample-App",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "babel": "^6.23.0",
+    "nodemon": "^2.0.19"
+  },
   "scripts": {
     "start": "node app.js"
   }
