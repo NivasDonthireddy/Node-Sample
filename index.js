@@ -1,18 +1,14 @@
 const express = require('express');
-const app = express();  
-const PORT = process.env.PORT || 3000;
-const path = require('path');
+const path = require('path')
+const port = process.env.PORT|| 3000;
+const app = express();
 
-app.use(express.static(path.join(__dirname,'../public')));
-app.set('view engine','hbs');
+app.use(express.static('public'))
 
-app.get('',(req,res,next)=>{
-    res.render('index',{
-        title: 'Energy Reflux Blog',
-        name: 'Nivas'
-    })
+app.get('/apis/posts',(req,res)=>{
+    res.send("Hi Welcome!");
 })
 
-app.listen(PORT,()=>{
-    console.log(`Server Listening on port: ${PORT}`);
-})
+app.listen(port, () => {
+    console.log("Server is listening on port "+port);
+});
