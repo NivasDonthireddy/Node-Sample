@@ -1,9 +1,16 @@
 const express = require('express');
-const app = express();
+const app = express();  
 const PORT = process.env.PORT || 3000;
+const path = require('path');
 
-app.get('/',(req,res,next)=>{
-    res.status(200).send('Hi , Welcome to Energy Reflux!');
+app.use(express.static(path.join(__dirname,'../public')));
+app.set('view engine','hbs');
+
+app.get('',(req,res,next)=>{
+    res.render('index',{
+        title: 'Energy Reflux Blog',
+        name: 'Nivas'
+    })
 })
 
 app.listen(PORT,()=>{
